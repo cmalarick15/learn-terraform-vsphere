@@ -18,7 +18,7 @@ source "vsphere-iso" "this" {
   cluster             = var.cluster
   insecure_connection = true
 
-  vm_name       = "ubuntu-01"
+  vm_name       = "tf-edu-ubuntu"
   guest_os_type = "ubuntu64Guest"
 
   CPUs            = 2
@@ -27,7 +27,7 @@ source "vsphere-iso" "this" {
 
   ssh_username = "ubuntu"
   ssh_password = "ubuntu"
-  ssh_timeout  = "10m"
+  ssh_timeout  = "30m"
 
   /* Uncomment when running on vcsim
   ssh_host     = "127.0.0.1"
