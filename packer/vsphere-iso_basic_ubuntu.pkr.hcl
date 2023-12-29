@@ -18,7 +18,7 @@ source "vsphere-iso" "this" {
   cluster             = var.cluster
   insecure_connection = true
 
-  vm_name       = "tf-edu-ubuntu"
+  vm_name       = "ubuntu-01"
   guest_os_type = "ubuntu64Guest"
 
   CPUs            = 2
@@ -27,7 +27,7 @@ source "vsphere-iso" "this" {
 
   ssh_username = "ubuntu"
   ssh_password = "ubuntu"
-  ssh_timeout  = "30m"
+  ssh_timeout  = "10m"
 
   /* Uncomment when running on vcsim
   ssh_host     = "127.0.0.1"
@@ -50,7 +50,7 @@ source "vsphere-iso" "this" {
     disk_thin_provisioned = true
   }
 
-  iso_paths = ["[vsanDatastore] ISO/ubuntu-22.04.1-live-server-amd64.iso"]
+  iso_paths = ["[truenas-vm1_nfs] ISOs/ubuntu-22.04.3-live-server-amd64.iso"]
 
   network_adapters {
     network = var.network_name
